@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Loading ...</title>
+	<meta http-equiv="refresh" content="3; URL=https://youritassistant.github.io/WebDesignCourse/e-card/">
+	<meta name="keywords" content="automatic redirection">
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			border: none;
+		 }
+		html, body {
+			height: 100%;
+		}
+		
+		body {
+			background: #f5f5f5; /* #f5f5f5, #212121, #191919, */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		div {
+			width: 50px;
+			height: 50px;
+			background: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		div.round1 {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			background:#2979ff;
+			z-index: 1;
+			animation: round1 2s infinite;
+			animation-delay: 0.4s;
+		}
+		div.round2 {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background:#40c4ff;
+			z-index: 2;
+			animation: round2 2s infinite;
+			animation-delay: 0.25s;
+		}
+		div.round3 {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background:white;
+			z-index: 3;
+			animation: round3 2s infinite;
+			animation-delay: 0.1s;
+		}
+		@keyframes round1 {
+			50% {
+			width: 250px;
+			height: 250px;
+			box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+			}
+		}
+		@keyframes round2 {
+			50% {
+			width: 180px;
+			height: 180px;
+			box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+			}
+		}
+		@keyframes round3 {
+			50% {
+			width: 110px;
+			height: 110px;
+			box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+			}
+		}
+	</style>
+</head>
+	<body>
+		<div class="round1">
+			<div class="round2">
+				<div class="round3"></div>
+			</div>
+		</div>
+	</body>
+</html>
