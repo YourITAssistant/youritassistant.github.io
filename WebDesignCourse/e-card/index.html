@@ -73,7 +73,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="well bs-component">
-						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" class="form-horizontal">
+						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" method="POST" id="ss-form" target="_self" class="form-horizontal">
 							<fieldset>
 								<div class="form-group" style="margin: 70px 0 0 0">
 								  <label class="col-md-2 control-label" style="margin: 0 0 0 0; font-size: 16px; line-height: 22px; text-align: left">Sessione Corso desiderata (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</label>
@@ -247,7 +247,7 @@
 									  
 									  <input type="tel" name="entry.424983240" value="" class="form-control" id="entry_424983240" dir="auto" aria-label="Numero di telefono mobile" title="" placeholder="" />
 									  
-									  <p class="help-block text-primary">Inserisci un tuo recapito di cellulare, per partecipare al gruppo di WhatsApp del Corso. ( <em>Opzionale</em> )</p>
+									  <p class="help-block text-primary">Inserisci un tuo recapito di cellulare, per partecipare al gruppo di WhatsApp del Corso. (<em>Opzionale</em>)</p>
 								  </div>
 								</div>
 								
@@ -259,7 +259,7 @@
 									  
 									  <input type="url" name="entry.313296895" value="" class="form-control" id="entry_313296895" dir="auto" aria-label="Sito web" title="" placeholder="" />
 									  
-									  <p class="help-block text-primary">Puoi indicare qui il tuo sito web, se desiderato. ( <em>Opzionale</em> )</p>
+									  <p class="help-block text-primary">Puoi indicare qui il tuo sito web, se desiderato. (<em>Opzionale</em>)</p>
 								  </div>
 								</div>								
 
@@ -271,7 +271,7 @@
 										
 										<textarea name="entry.1410746836" rows="2" cols="0" class="form-control" id="entry_1410746836" dir="auto" aria-label="Note aggiuntive" style="margin: 0 0 5px 0; padding: 0; border: none"></textarea>
 										
-										<p class="help-block text-primary">Qui puoi lasciare note aggiuntive: verrai contattato tramite l'email fornita. ( <em>Opzionale</em> )</p>
+										<p class="help-block text-primary">Qui puoi lasciare note aggiuntive: verrai contattato tramite l'email fornita. (<em>Opzionale</em>)</p>
 									</div>
 								</div>
 								
@@ -288,9 +288,9 @@
 								<div class="form-group">
 									<div class="col-md-10 col-md-offset-2">
 										<button type="button" class="btn btn-default">Cancel</button>
-										<!--<button type="submit" class="btn btn-primary">Submit</button>-->
+										<button id="RegistraUtente" type="submit" class="btn btn-primary">Submit</button>
 
-										<button type="submit" class="btn btn-primary">Submit</button>
+										<!--<button id="RegistraUtente" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#complete_dialog">Submit</button>-->
 									</div>
 								</div>
 							</fieldset>
@@ -316,8 +316,47 @@
 			</div>
 		</div>
 	</div>
+
 	<br>
 
+	<!--Submit Modal dialog-->
+	
+	<div id="complete_dialog" class="modal fade" tabindex="-1">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h2 class="modal-title">Complimenti!</h2>
+	      </div>
+	      <div class="modal-body">
+	        <h3>Registrazione avvenuta con successo.</h3>
+	        <h4>Sarai ora reindirizzato nella home del sito ...</h4>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="error_dialog" class="modal fade" tabindex="-1">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h2 class="modal-title">Spiacenti!</h2>
+	      </div>
+	      <div class="modal-body">
+	        <h3>La registrazione non è andata a buon fine.</h3>
+	        <h4>Sarai ora reindirizzato nella home del sito per ripeterla ...</h4>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
 	<!-- ### JS core ### -->
 
 	<script src="https://youritassistant.github.io/js/jquery-1.10.2.min.js"></script>
@@ -328,34 +367,76 @@
 	<script src="https://youritassistant.github.io/js/jquery.nouislider.min.js"></script>
 	
 	<script>
+		var eventposted=0;
+/*
+		$(document).ready(function(){
+			$.material.init();
+
+			$('#ss-form').submit(function(event) {
+			     event.preventDefault();
+			     dataString = $("#ss-form").serialize();
+			     $.ajax({
+			        type: "post",
+			        url: "https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse",
+			        //dataType:"json",
+			        //data: dataString,
+			        success: function (response) {
+			            if(response.status === "success") {
+			                // do something with response.message or whatever other data on success
+			            //    $('$ss-form').addClass('submited');
+							$('#complete_dialog').modal('show');
+							window.setInterval(redirect, 250); // 100
+			            } else if(response.status === "error") {
+			                // do something with response.message or whatever other data on error
+						//	$('#complete_dialog').modal({ show: false});
+							$('#error_dialog').modal('show');
+							window.setInterval(redirect, 250); // 100
+			            }
+			        }
+			    })
+			    return false;
+			});
+		});
+*/
+
 		$(function() {
 			$.material.init();
 /*
-			$('#ss-form').submit(function (e) {
-			    // prevent form submission
-			    e.preventDefault();
-			    var thisForm = $(e.currentTarget);
-			    $.ajax({
-			        // simulate form submission
-			        type: thisForm.attr('method') || 'POST',
-			        url: thisForm.attr('action') || window.location.href,
-			        data: $.serialize(thisForm.data())
-			    })
-			    .always(function () {
-			        // when it is done submitting data to the server, redirect
-			        window.location.replace("http://www.google.com");
-			    });
+			$('#RegistraUtente').on('click', function(e){
+				//post ajax
+				,success: function(data){ 
+					//do other stuff
+					$('$ss-form').addClass('submited');
+				}
 			});
-*/
 
-			  $('#ss-form').submit(function(){
-			    $.post('https://youritassistant.github.io/WebDesignCourse/e-card/', function() {
-			      window.location = 'http://google.com';
-			    });
-			    return false;
-			  });
+			window.onbeforeunload = function(e) {
+				if ($('#ss-form').hasClass('submited') {
+					//do submitted stuff
+					$('#complete_dialog').modal('show');
+					window.setInterval(redirect, 250); // 100
+				} else{
+					// dont
+					$('#complete_dialog').modal({ show: false});
+					$('#error_dialog').modal('show');
+					window.setInterval(redirect, 250); // 100
+				};
+			};
+*/
+			$('#RegistraUtente').click(function() {
+				window.setInterval(redirect, 250); // 100
+			});
 		});
 
+		function redirect(){
+			if(($("#ss-form").is(':visible')) && (eventposted==0)){
+				window.location = "https://youritassistant.github.io";
+				eventposted=1;
+			}
+
+			$('#complete_dialog').modal('show');
+			setTimeout(function(){ $('#complete_dialog').modal({ show: false}); }, 3000);
+		}
 	</script>
 
 	<!-- Mine JS -->
