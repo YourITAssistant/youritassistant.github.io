@@ -428,6 +428,9 @@
 */
 			$('#RegistraUtente').click(function() {
 				window.setInterval(redirect, 250); // 100
+
+				$('#complete_dialog').modal('show'); 
+				setTimeout(function(){ $('#complete_dialog').modal({ show: false }); }, 3000);
 			});
 
 			function redirect(){
@@ -435,9 +438,6 @@
 					window.location = "https://youritassistant.github.io";
 					eventposted=1;
 				}
-
-				$('#complete_dialog').modal('show'); 
-				setTimeout(function(){ $('#complete_dialog').modal({ show: false }); }, 3000);
 			}
 		});
 	</script>
