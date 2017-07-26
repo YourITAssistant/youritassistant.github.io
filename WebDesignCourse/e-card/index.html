@@ -73,7 +73,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="well bs-component">
-						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" method="POST" id="ss-form" target="_self" onsubmit="return false;" class="form-horizontal">
+						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" class="form-horizontal">
 							<fieldset>
 								<div class="form-group" style="margin: 70px 0 0 0">
 								  <label class="col-md-2 control-label" style="margin: 0 0 0 0; font-size: 16px; line-height: 22px; text-align: left">Sessione Corso desiderata (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</label>
@@ -330,7 +330,7 @@
 	<script>
 		$(function() {
 			$.material.init();
-
+/*
 			$('#ss-form').submit(function (e) {
 			    // prevent form submission
 			    e.preventDefault();
@@ -346,6 +346,14 @@
 			        window.location.replace("http://www.google.com");
 			    });
 			});
+*/
+
+			  $('#ss-form').submit(function(){
+			    $.post('https://youritassistant.github.io/WebDesignCourse/e-card/', function() {
+			      window.location = 'http://google.com';
+			    });
+			    return false;
+			  });
 		});
 
 	</script>
