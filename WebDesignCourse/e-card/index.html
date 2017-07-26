@@ -369,10 +369,10 @@
 	<script>
 		var eventposted=0;
 
-		jQuery.noConflict(); 
-		
+		$.noConflict();
+
 /*
-		$(document).ready(function(){
+		jQuery(document).ready(function($){
 			$.material.init();
 
 			$('#ss-form').submit(function(event) {
@@ -402,7 +402,7 @@
 		});
 */
 
-		$(function() {
+		jQuery(document).ready(function($){
 			$.material.init();
 /*
 			$('#RegistraUtente').on('click', function(e){
@@ -429,17 +429,17 @@
 			$('#RegistraUtente').click(function() {
 				window.setInterval(redirect, 250); // 100
 			});
-		});
 
-		function redirect(){
-			if(($("#ss-form").is(':visible')) && (eventposted==0)){
-				window.location = "https://youritassistant.github.io";
-				eventposted=1;
+			function redirect(){
+				if(($("#ss-form").is(':visible')) && (eventposted==0)){
+					window.location = "https://youritassistant.github.io";
+					eventposted=1;
+				}
+
+				$('#complete_dialog').modal('show'); 
+				setTimeout(function(){ $('#complete_dialog').modal({ show: false; }); }, 3000);
 			}
-
-			$('#complete_dialog').modal('show'); 
-			setTimeout(function(){ $('#complete_dialog').modal({ show: false; }); }, 3000);
-		}
+		});
 	</script>
 
 	<!-- Mine JS -->
