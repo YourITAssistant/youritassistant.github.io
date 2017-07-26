@@ -25,233 +25,6 @@
 
 	<link href="https://youritassistant.github.io/framework/snackbarjs/dist/snackbar.min.css" rel="stylesheet" />
 
-	<style>
-		body {
-			padding-top: 50px
-		}
-
-		#banner {
-			border-bottom: none
-		}
-
-		.page-header h1 {
-			font-size: 4em
-		}
-
-		.bs-docs-section {
-			margin-top: 0 /* margin-top: 8em */
-		}
-
-		.bs-component {
-			position: relative
-		}
-
-		.bs-component .modal {
-			position: relative;
-			top: auto;
-			right: auto;
-			left: auto;
-			bottom: auto;
-			z-index: 1;
-			display: block
-		}
-
-		.bs-component .modal-dialog {
-			width: 90%
-		}
-
-		.bs-component .popover {
-			position: relative;
-			display: inline-block;
-			width: 220px;
-			margin: 20px
-		}
-
-		#source-button {
-			position: absolute;
-			top: 0;
-			right: 0;
-			z-index: 100;
-			font-weight: bold;
-			padding: 5px 10px;
-		}
-
-		.progress {
-			margin-bottom: 10px
-		}
-
-		footer {
-			margin: 5em 0
-		}
-
-		footer li {
-			float: left;
-			margin-right: 1.5em;
-			margin-bottom: 1.5em
-		}
-
-		footer p {
-			clear: left;
-			margin-bottom: 0
-		}
-
-		.splash {
-			padding: 4em 0 0;
-			background-color: #141d27;
-			color: #fff;
-			text-align: center
-		}
-
-		.splash h1 {
-			font-size: 4em
-		}
-
-		.splash #social {
-			margin: 2em 0
-		}
-
-		.splash .alert {
-			margin: 2em 0
-		}
-
-		.section-tout {
-			padding: 4em 0 3em;
-			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-			background-color: #eaf1f1
-		}
-
-		.section-tout .fa {
-			margin-right: .5em
-		}
-
-		.section-tout p {
-			margin-bottom: 3em
-		}
-
-		.section-preview {
-			padding: 4em 0 4em
-		}
-
-		.section-preview .preview {
-			margin-bottom: 4em;
-			background-color: #eaf1f1
-		}
-
-		.section-preview .preview .image {
-			position: relative
-		}
-
-		.section-preview .preview .image:before {
-			box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			content: "";
-			pointer-events: none
-		}
-
-		.section-preview .preview .options {
-			padding: 1em 2em 2em;
-			border: 1px solid rgba(0, 0, 0, 0.05);
-			border-top: none;
-			text-align: center
-		}
-
-		.section-preview .preview .options p {
-			margin-bottom: 2em
-		}
-
-		.section-preview .dropdown-menu {
-			text-align: left
-		}
-
-		.section-preview .lead {
-			margin-bottom: 2em
-		}
-
-		@media (max-width: 767px) {
-			.section-preview .image img {
-				width: 100%
-			}
-		}
-
-		.sponsor {
-			text-align: center
-		}
-
-		.sponsor a:hover {
-			text-decoration: none
-		}
-
-		@media (max-width: 767px) {
-			#banner {
-				margin-bottom: 2em;
-				text-align: center
-			}
-		}
-
-		.infobox .btn-sup {
-			color: rgba(0, 0, 0, 0.5);
-			font-weight: bold;
-			font-size: 15px;
-			line-height: 30px;
-		}
-
-		.infobox .btn-sup img {
-			opacity: 0.5;
-			height: 30px;
-		}
-
-		.infobox .btn-sup span {
-			padding-left: 10px;
-			position: relative;
-			top: 2px;
-		}
-
-		.icons-material .row {
-			margin-bottom: 20px;
-		}
-
-		.icons-material .col-xs-2 {
-			text-align: center;
-		}
-
-		.icons-material i {
-			font-size: 34pt;
-		}
-
-		.icon-preview {
-			display: inline-block;
-			padding: 10px;
-			margin: 10px;
-			background: #D5D5D5;
-			border-radius: 3px;
-			cursor: pointer;
-		}
-
-		.icon-preview span {
-			display: none;
-			position: absolute;
-			background: black;
-			color: #EEE;
-			padding: 5px 8px;
-			font-size: 15px;
-			border-radius: 2px;
-			z-index: 10;
-		}
-
-		.icon-preview:hover i {
-			color: #4285f4;
-		}
-
-		.icon-preview:hover span {
-			display: block;
-			cursor: text;
-		}
-	</style>
-
 	<!-- Mine CSS -->
 	<link type="text/css" rel="stylesheet" href="https://youritassistant.github.io/css/style.css" /><!--<link rel="stylesheet" type="text/css" href="../../css/style.css" />-->
 	
@@ -300,22 +73,28 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="well bs-component">
-						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" target="_self" method="POST" id="mG61Hd" class="form-horizontal">
+						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" class="form-horizontal">
 							<fieldset>
 								<div class="form-group" style="margin: 70px 0 0 0">
 								  <label class="col-md-2 control-label" style="margin: 0 0 0 0; font-size: 16px; line-height: 22px; text-align: left">Sessione Corso desiderata (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</label>
 
 								  <div class="col-md-10">
 									<div class="radio radio-primary">
-									  <label for="Session_1" style="text-align: left">
-										<input type="radio" name="entry.240745556" id="Session_1" value="option1" checked="checked" />
-										Prima (Ottobre 2017 - Marzo 2018)
+									  <label for="group_240745556_1" style="text-align: left">
+										<!--<input type="radio" name="entry.240745556" id="group_240745556_1" value="Prima (Ottobre 2017 - Marzo 2018)" checked="checked" />
+										Prima (Ottobre 2017 - Marzo 2018)-->
+										  
+										  <input type="radio" name="entry.240745556" value="Prima (Ottobre 2017 - Marzo 2018)" id="group_240745556_1" role="radio" aria-label="Prima (Ottobre 2017 - Marzo 2018)" required="" aria-required="true" checked="checked" />
+										  Prima (Ottobre 2017 - Marzo 2018)
 									  </label>
 									</div>
 									  
 									<div class="radio radio-primary">
-										<label for="Session_2" style="text-align: left">
-											<input type="radio" name="entry.240745556" id="Session_2" value="option2" />
+										<label for="group_240745556_2" style="text-align: left">
+											<!--<input type="radio" name="entry.240745556" id="group_240745556_2" value="Seconda (Aprile 2018 - Settembre 2018)" />
+											Seconda (Aprile 2018 - Settembre 2018)-->
+											
+											<input type="radio" name="entry.240745556" value="Seconda (Aprile 2018 - Settembre 2018)" id="group_240745556_2" role="radio" aria-label="Seconda (Aprile 2018 - Settembre 2018)" required="" aria-required="true" />
 											Seconda (Aprile 2018 - Settembre 2018)
 										</label>
 									</div>
@@ -323,43 +102,47 @@
 								</div>
 								
 								<div class="form-group label-floating" style="margin: 70px 0 0 0">
-								  <label for="inputEmail" class="control-label" style="margin: 6px 0 0 15px">Indirizzo email</label>
+								  <label for="entry_1077870284" class="control-label" style="margin: 6px 0 0 15px">Indirizzo email</label>
 
 								  <div class="col-md-12">
-									<input type="email" name="entry.1077870284" class="form-control" id="inputEmail" placeholder="" />
+									<input type="email" name="entry.1077870284" class="form-control" id="entry_1077870284" placeholder="" />
+									  
 									<p class="help-block text-primary">Inserisci il tuo indirizzo email da validare. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p><!--INSERIRE IL CONTROLLO DELL'EMAIL PER ATTIVARE L'ISCRIZIONE-->
 								  </div>
 								</div>
 								
 								<!--<div class="form-group label-floating" style="margin: 70px 0 0 0">
-									<label for="inputEmail" class="control-label">e-Mail</label>
-									<input type="email" name="entry.1077870284" class="form-control" id="inputEmail" placeholder="" />
+									<label for="entry_1077870284" class="control-label">e-Mail</label>
+									<input type="email" name="entry.1077870284" class="form-control" id="entry_1077870284" placeholder="" />
 									<p class="help-block text-primary">Inserisci un'indirizzo email valido. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
 								</div>-->
 
 								<div class="form-group label-floating" style="margin: 70px 0 0 0">
-								  <label for="inputName" class="control-label" style="margin: 6px 0 0 15px">Nome</label>
+								  <label for="entry_573808426" class="control-label" style="margin: 6px 0 0 15px">Nome</label>
 
 								  <div class="col-md-12">
-									<input type="text" name="entry.573808426" class="form-control" id="inputName" placeholder="" />
+									<input type="text" name="entry.573808426" class="form-control" id="entry_573808426" placeholder="" />
+									  
 									<p class="help-block text-primary">Inserisci il tuo nome, da riportare sull'attestato finale. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
 								  </div>
 								</div>
 								
 								<div class="form-group label-floating" style="margin: 70px 0 0 0">
-								  <label for="inputSurname" class="control-label" style="margin: 6px 0 0 15px">Cognome</label>
+								  <label for="entry_1882019516" class="control-label" style="margin: 6px 0 0 15px">Cognome</label>
 
 								  <div class="col-md-12">
-									<input type="text" name="entry.1882019516" class="form-control" id="inputSurname" placeholder="" />
+									<input type="text" name="entry.1882019516" class="form-control" id="entry_1882019516" placeholder="" />
+									  
 									<p class="help-block text-primary">Inserisci il tuo cognome, da riportare sull'attestato finale. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
 								  </div>
 								</div>
 								
 								<div class="form-group label-floating" style="margin: 70px 0 0 0">
-								  <!--<label for="inputBorn" class="control-label" style="margin: 6px 0 0 15px">Data di nascita. <sup class="text-danger" style="font-size: 14px; line-height: 14px">*</sup></label>-->
+								  <!--<label for="entry_362604716" class="control-label" style="margin: 6px 0 0 15px">Data di nascita. <sup class="text-danger" style="font-size: 14px; line-height: 14px">*</sup></label>-->
 
 								  <div class="col-md-12">
-									  <input type="date" name="entry.362604716" class="form-control" id="inputBorn" placeholder="Data di nascita" />
+									  <input type="date" name="entry.362604716" class="form-control" id="entry_362604716" placeholder="Data di nascita" />
+									  
 									  <p class="help-block text-primary">Inserisci la tua data di nascita. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
 								  </div>
 								</div>
@@ -369,16 +152,22 @@
 
 								  <div class="col-md-10">
 									<div class="checkbox checkbox-primary">
-									  <label for="Checkbox_1" style="text-align: left">
-										<input type="checkbox" name="entry.2111227453" id="Checkbox_1" value="option1" checked="checked" />
-										Italiano
+									  <label for="group_2111227453_1" style="text-align: left">
+										  <!--<input type="checkbox" name="entry.2111227453" id="group_2111227453_1" value="Italiano" checked="checked" />
+										  Italiano-->
+										  
+										  <input type="checkbox" name="entry.2111227453" value="Italiano" id="group_2111227453_1" role="checkbox" aria-label="Italiano" required="" aria-required="true" checked="checked" />
+										  Italiano
 									  </label>
 									</div>
 									  
 									<div class="checkbox checkbox-primary">
-									  <label for="Checkbox_2" style="text-align: left">
-										<input type="checkbox" name="entry.2111227453" id="Checkbox_2" value="option2" />
-										English
+									  <label for="group_2111227453_2" style="text-align: left">
+										  <!--<input type="checkbox" name="entry.2111227453" id="group_2111227453_2" value="English" />
+										  English-->
+										  
+										  <input type="checkbox" name="entry.2111227453" value="English" id="group_2111227453_2" role="checkbox" aria-label="English" required="" aria-required="true" />
+										  English
 									  </label>
 									</div>
 								  </div>
@@ -389,22 +178,31 @@
 
 								  <div class="col-md-10">
 									<div class="radio radio-primary">
-									  <label for="Windows" style="text-align: left">
-										<input type="radio" name="entry.582971954" id="Windows" value="option1" checked="checked" />
-										Windows
+									  <label for="group_582971954_1" style="text-align: left">
+										  <!--<input type="radio" name="entry.582971954" id="group_582971954_1" value="Windows" checked="checked" />
+										  Windows-->
+										  
+										  <input type="radio" name="entry.582971954" value="Windows" id="group_582971954_1" role="radio" aria-label="Windows" required="" aria-required="true" checked="checked" />
+										  Windows
 									  </label>
 									</div>
 									  
 									<div class="radio radio-primary">
-										<label for="macOS" style="text-align: left">
-											<input type="radio" name="entry.582971954" id="macOS" value="option2" />
+										<label for="group_582971954_2" style="text-align: left">
+											<!--<input type="radio" name="entry.582971954" id="group_582971954_2" value="macOS" />
+											macOS-->
+											
+											<input type="radio" name="entry.582971954" value="macOS" id="group_582971954_2" role="radio" aria-label="macOS" required="" aria-required="true" />
 											macOS
 										</label>
 									</div>
 									  
 									<div class="radio radio-primary">
-										<label for="Linux" style="text-align: left">
-											<input type="radio" name="entry.582971954" id="Linux" value="option3" />
+										<label for="group_582971954_3" style="text-align: left">
+											<!--<input type="radio" name="entry.582971954" id="group_582971954_3" value="Linux" />
+											Linux-->
+											
+											<input type="radio" name="entry.582971954" value="Linux" id="group_582971954_3" role="radio" aria-label="Linux" required="" aria-required="true" />
 											Linux
 										</label>
 									</div>
@@ -412,46 +210,61 @@
 								</div>
 								
 								<div class="form-group label-floating" style="margin: 70px 0 0 0">
-								  <label for="inputProArea" class="control-label" style="margin: 6px 0 0 15px">Area professionale</label>
+								  <label for="entry_1065002122" class="control-label" style="margin: 6px 0 0 15px">Area professionale</label>
 
 								  <div class="col-md-12">
-									<input type="text" name="entry.1065002122" class="form-control" id="inputProArea" placeholder="" />
-									<p class="help-block text-primary">Inserisci la tua area professionale: servirà per creare contenuti più mirati per il tuo ambito. (es. <em>Settore sanitario</em>) (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
+									  <!--<input type="text" name="entry.1065002122" value="" class="form-control" id="entry_1065002122" placeholder="" />-->
+									  
+									  <input type="text" name="entry.1065002122" value="" id="entry_1065002122" class="form-control" dir="auto" aria-label="Area professionale" aria-required="true" required="" title="" placeholder="" />
+									  
+									  <p class="help-block text-primary">Inserisci la tua area professionale: servirà per creare contenuti più mirati per il tuo ambito. (es. <em>Settore sanitario</em>) (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
 								  </div>
 								</div>
 								
 								<div class="form-group label-floating" style="margin: 70px 0 0 0">
-								  <label for="inputProRole" class="control-label" style="margin: 6px 0 0 15px">Ruolo professionale</label>
+								  <label for="entry_228822092" class="control-label" style="margin: 6px 0 0 15px">Ruolo professionale</label>
 
 								  <div class="col-md-12">
-									<input type="text" name="entry.228822092" class="form-control" id="inputProRole" placeholder="" />
-									<p class="help-block text-primary">Inserisci il ruolo da te assunto nel tuo contesto professionale: aiuterà per creare contenuti su misura per te. (es. <em>Farmacista</em>) (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
+									  <!--<input type="text" name="entry.228822092" class="form-control" id="entry_228822092" placeholder="" />-->
+									  
+									  <input type="text" name="entry.228822092" value="" id="entry_228822092" class="form-control" dir="auto" aria-label="Ruolo professionale" aria-required="true" required="" title="" placeholder="" />
+									  
+									  <p class="help-block text-primary">Inserisci il ruolo da te assunto nel tuo contesto professionale: aiuterà per creare contenuti su misura per te. (es. <em>Farmacista</em>) (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
 								  </div>
 								</div>
 								
 								<div class="form-group label-floating" style="margin: 70px 0 0 0">
-								  <label for="inputPhoneNum" class="control-label" style="margin: 6px 0 0 15px">Numero di telefono mobile</label>
+								  <label for="entry_424983240" class="control-label" style="margin: 6px 0 0 15px">Numero di telefono mobile</label>
 
 								  <div class="col-md-12">
-									<input type="tel" name="entry.424983240" class="form-control" id="inputPhoneNum" placeholder="" />
-									<p class="help-block text-primary">Inserisci un tuo recapito di cellulare, per partecipare al gruppo di WhatsApp del Corso. ( <em>Opzionale</em> )</p>
+									  <!--<input type="tel" name="entry.424983240" class="form-control" id="entry_424983240" placeholder="" />-->
+									  
+									  <input type="tel" name="entry.424983240" value="" class="form-control" id="entry_424983240" dir="auto" aria-label="Numero di telefono mobile" title="" placeholder="" />
+									  
+									  <p class="help-block text-primary">Inserisci un tuo recapito di cellulare, per partecipare al gruppo di WhatsApp del Corso. ( <em>Opzionale</em> )</p>
 								  </div>
 								</div>
 								
 								<div class="form-group label-floating" style="margin: 70px 0 0 0">
-								  <label for="inputWebsite" class="control-label" style="margin: 6px 0 0 15px">Sito web</label>
+								  <label for="entry_313296895" class="control-label" style="margin: 6px 0 0 15px">Sito web</label>
 
 								  <div class="col-md-12">
-									<input type="url" name="entry.313296895" class="form-control" id="inputWebsite" placeholder="" />
-									<p class="help-block text-primary">Puoi indicare qui il tuo sito web, se desiderato. ( <em>Opzionale</em> )</p>
+									  <!--<input type="url" name="entry.313296895" class="form-control" id="entry_313296895" placeholder="" />-->
+									  
+									  <input type="url" name="entry.313296895" value="" class="form-control" id="entry_313296895" dir="auto" aria-label="Sito web" title="" placeholder="" />
+									  
+									  <p class="help-block text-primary">Puoi indicare qui il tuo sito web, se desiderato. ( <em>Opzionale</em> )</p>
 								  </div>
 								</div>								
 
 								<div class="form-group label-floating" style="margin: 70px 0 0 0">
-									<label for="textArea" class="control-label" style="margin: 10px 0 0 15px">Note aggiuntive</label>
+									<label for="entry_1410746836" class="control-label" style="margin: 10px 0 0 15px">Note aggiuntive</label>
 
 									<div class="col-md-12">
-										<textarea name="entry.1410746836" class="form-control" rows="2" id="textArea" style="margin: 0 0 5px 0; padding: 0; border: none"></textarea>
+										<!--<textarea name="entry.1410746836" class="form-control" rows="2" id="entry_1410746836" style="margin: 0 0 5px 0; padding: 0; border: none"></textarea>-->
+										
+										<textarea name="entry.1410746836" rows="2" cols="0" class="form-control" id="entry_1410746836" dir="auto" aria-label="Note aggiuntive" style="margin: 0 0 5px 0; padding: 0; border: none"></textarea>
+										
 										<p class="help-block text-primary">Qui puoi lasciare note aggiuntive, se desiderato: verrai contattato tramite l'email fornita. ( <em>Opzionale</em> )</p>
 									</div>
 								</div>
@@ -459,11 +272,13 @@
 								<div class="form-group" style="margin: 70px 0 0 0">
 								  <label class="control-label" style="margin: 6px 0 0 15px"><em>Una copia delle risposte verrà inviata via email all'indirizzo fornito.</em></label>
 								</div>
+								
 								<!--
 								<div class="form-group" style="margin: 70px 0 0 0">
 									<div class="g-recaptcha" data-sitekey="6LfsdCoUAAAAAOzabrqwCOOLr8HQwdBz7uPiI1m9" style="margin: 6px 0 0 15px"></div>
 								</div>
 								-->
+								
 								<div class="form-group">
 									<div class="col-md-10 col-md-offset-2">
 										<button type="button" class="btn btn-default">Cancel</button>
