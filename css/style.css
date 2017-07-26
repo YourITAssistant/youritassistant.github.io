@@ -16,8 +16,8 @@ body {
 	padding-top: 50px;
 }
 
-label, input {
-	color: red
+.form-group .checkbox label, .form-group .radio label, .form-group label {
+	color: #263238
 }
 
 #banner {
