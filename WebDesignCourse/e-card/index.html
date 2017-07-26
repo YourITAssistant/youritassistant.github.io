@@ -432,10 +432,9 @@
 			if(($("#ss-form").is(':visible')) && (eventposted==0)){
 				window.location = "https://youritassistant.github.io";
 				eventposted=1;
+				$('#complete_dialog').modal('show');
+				setTimeout(function(){ $('#complete_dialog').modal({ show: false}); }, 3000);
 			}
-
-			$('#complete_dialog').modal('show');
-			setTimeout(function(){ $('#complete_dialog').modal({ show: false}); }, 3000);
 		}
 	</script>
 
