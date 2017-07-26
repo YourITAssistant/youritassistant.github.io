@@ -73,7 +73,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="well bs-component">
-						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" class="form-horizontal">
+						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" method="POST" id="ss-form" target="_self" onsubmit="return false;" class="form-horizontal">
 							<fieldset>
 								<div class="form-group" style="margin: 70px 0 0 0">
 								  <label class="col-md-2 control-label" style="margin: 0 0 0 0; font-size: 16px; line-height: 22px; text-align: left">Sessione Corso desiderata (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</label>
@@ -288,6 +288,8 @@
 								<div class="form-group">
 									<div class="col-md-10 col-md-offset-2">
 										<button type="button" class="btn btn-default">Cancel</button>
+										<!--<button type="submit" class="btn btn-primary">Submit</button>-->
+
 										<button type="submit" class="btn btn-primary">Submit</button>
 									</div>
 								</div>
@@ -328,6 +330,22 @@
 	<script>
 		$(function() {
 			$.material.init();
+
+			$('#ss-form').submit(function (e) {
+			    // prevent form submission
+			    e.preventDefault();
+			    var thisForm = $(e.currentTarget);
+			    $.ajax({
+			        // simulate form submission
+			        type: thisForm.attr('method') || 'POST',
+			        url: thisForm.attr('action') || window.location.href,
+			        data: $.serialize(thisForm.data())
+			    })
+			    .always(function () {
+			        // when it is done submitting data to the server, redirect
+			        window.location.replace("http://www.google.com");
+			    });
+			});
 		});
 
 	</script>
