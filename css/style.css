@@ -18,15 +18,23 @@ body {
 
 body .container .well, body .container-fluid .well, body .container .jumbotron, body .container-fluid .jumbotron, body .container .well-default, body .container-fluid .well-default, body .container .jumbotron-default, body .container-fluid .jumbotron-default {
 	background-color: #f5f5f5;
-	color: #33454c
+	color: #455a64 /* #33454c, #455a64 */
 }
 
 .form-group .checkbox label, .form-group .radio label, .form-group label {
-	color: #33454c
+	color: #455a64 /* #33454c, #455a64 */
 }
 
 .form-group .help-block {
 	font-weight: bold !important;
+}
+
+#complete-dialog {
+	position: relative;
+	float: left;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #banner {
