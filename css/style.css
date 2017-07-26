@@ -1,0 +1,14 @@
+#fab {
+	display: block;
+	position: fixed;
+	float: right;
+	right: 25px;
+	bottom: 25px;
+	z-index: 9999
+}
+/*
+#inputBorn::before { 
+    content: " ";
+	margin: 0 120px 0 0;
+}
+*/
