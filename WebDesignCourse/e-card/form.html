@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Corso Completo di Web Design</title>
+	<meta name="description" content="">
+	<meta name="author" content="Your IT Assistant">
+	<meta name="keywords" content="HTML, HTML5, CSS, CSS3, JavaScript, jQuery, PHP, Bootstrap">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- ### CSS core ### -->
+
+	<!-- Material Design fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Bootstrap Material Design -->
+	<link href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/bootstrap-material-design.css" rel="stylesheet">
+	<link href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+
+	<link href="http://fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet">
+
+	<style>
+		body {
+			padding-top: 50px
+		}
+
+		#banner {
+			border-bottom: none
+		}
+
+		.page-header h1 {
+			font-size: 4em
+		}
+
+		.bs-docs-section {
+			margin-top: 0 /* margin-top: 8em */
+		}
+
+		.bs-component {
+			position: relative
+		}
+
+		.bs-component .modal {
+			position: relative;
+			top: auto;
+			right: auto;
+			left: auto;
+			bottom: auto;
+			z-index: 1;
+			display: block
+		}
+
+		.bs-component .modal-dialog {
+			width: 90%
+		}
+
+		.bs-component .popover {
+			position: relative;
+			display: inline-block;
+			width: 220px;
+			margin: 20px
+		}
+
+		#source-button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 100;
+			font-weight: bold;
+			padding: 5px 10px;
+		}
+
+		.progress {
+			margin-bottom: 10px
+		}
+
+		footer {
+			margin: 5em 0
+		}
+
+		footer li {
+			float: left;
+			margin-right: 1.5em;
+			margin-bottom: 1.5em
+		}
+
+		footer p {
+			clear: left;
+			margin-bottom: 0
+		}
+
+		.splash {
+			padding: 4em 0 0;
+			background-color: #141d27;
+			color: #fff;
+			text-align: center
+		}
+
+		.splash h1 {
+			font-size: 4em
+		}
+
+		.splash #social {
+			margin: 2em 0
+		}
+
+		.splash .alert {
+			margin: 2em 0
+		}
+
+		.section-tout {
+			padding: 4em 0 3em;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+			background-color: #eaf1f1
+		}
+
+		.section-tout .fa {
+			margin-right: .5em
+		}
+
+		.section-tout p {
+			margin-bottom: 3em
+		}
+
+		.section-preview {
+			padding: 4em 0 4em
+		}
+
+		.section-preview .preview {
+			margin-bottom: 4em;
+			background-color: #eaf1f1
+		}
+
+		.section-preview .preview .image {
+			position: relative
+		}
+
+		.section-preview .preview .image:before {
+			box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			content: "";
+			pointer-events: none
+		}
+
+		.section-preview .preview .options {
+			padding: 1em 2em 2em;
+			border: 1px solid rgba(0, 0, 0, 0.05);
+			border-top: none;
+			text-align: center
+		}
+
+		.section-preview .preview .options p {
+			margin-bottom: 2em
+		}
+
+		.section-preview .dropdown-menu {
+			text-align: left
+		}
+
+		.section-preview .lead {
+			margin-bottom: 2em
+		}
+
+		@media (max-width: 767px) {
+			.section-preview .image img {
+				width: 100%
+			}
+		}
+
+		.sponsor {
+			text-align: center
+		}
+
+		.sponsor a:hover {
+			text-decoration: none
+		}
+
+		@media (max-width: 767px) {
+			#banner {
+				margin-bottom: 2em;
+				text-align: center
+			}
+		}
+
+		.infobox .btn-sup {
+			color: rgba(0, 0, 0, 0.5);
+			font-weight: bold;
+			font-size: 15px;
+			line-height: 30px;
+		}
+
+		.infobox .btn-sup img {
+			opacity: 0.5;
+			height: 30px;
+		}
+
+		.infobox .btn-sup span {
+			padding-left: 10px;
+			position: relative;
+			top: 2px;
+		}
+
+		.icons-material .row {
+			margin-bottom: 20px;
+		}
+
+		.icons-material .col-xs-2 {
+			text-align: center;
+		}
+
+		.icons-material i {
+			font-size: 34pt;
+		}
+
+		.icon-preview {
+			display: inline-block;
+			padding: 10px;
+			margin: 10px;
+			background: #D5D5D5;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		.icon-preview span {
+			display: none;
+			position: absolute;
+			background: black;
+			color: #EEE;
+			padding: 5px 8px;
+			font-size: 15px;
+			border-radius: 2px;
+			z-index: 10;
+		}
+
+		.icon-preview:hover i {
+			color: #4285f4;
+		}
+
+		.icon-preview:hover span {
+			display: block;
+			cursor: text;
+		}
+	</style>
+
+	<!-- Mine CSS -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+
+	<!--
+		### Risorse ###
+
+		- Bootstrap:
+			http://getbootstrap.com/getting-started/
+			http://getbootstrap.com/components/
+			https://v4-alpha.getbootstrap.com/examples/
+			https://v4-alpha.getbootstrap.com/examples/grid/
+			https://mdbootstrap.com/forums/topic/floating-action-button-fab/
+			https://github.com/FezVrasta/bootstrap-material-design
+			https://cdnjs.com/libraries/bootstrap-material-design
+			https://mdbootstrap.com/css/colors/
+			https://mdbootstrap.com/css/typography/#text-color
+
+		- jQuery:
+			http://jquery.com/download/
+			https://developers.google.com/speed/libraries/#jquery
+	-->
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="page-header" id="banner">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="h1">Corso Completo di Web Design</h1>
+
+					<p class="lead">Modulo d'Iscrizione 2017&mdash;2018</p>
+					
+					<h5 class="text-danger">(<span style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>) Campo obbligatorio</h5>
+
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Forms
+	================================================== -->
+		<div class="bs-docs-section">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="well bs-component">
+						<form class="form-horizontal">
+							<fieldset>
+								<div class="form-group" style="margin: 70px 0 0 0">
+								  <label class="col-md-2 control-label" style="margin: 0 0 0 0; font-size: 16px; line-height: 22px; text-align: left">Sessione Corso desiderata (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</label>
+
+								  <div class="col-md-10">
+									<div class="radio radio-primary">
+									  <label for="Session_1" style="text-align: left">
+										<input type="radio" name="optionsRadios" id="Session_1" value="option1" checked="">
+										Prima (Ottobre 2017 - Marzo 2018)
+									  </label>
+									</div>
+									  
+									<div class="radio radio-primary">
+										<label for="Session_2" style="text-align: left">
+											<input type="radio" name="optionsRadios" id="Session_2" value="option2">
+											Seconda (Aprile 2018 - Settembre 2018)
+										</label>
+									</div>
+								  </div>
+								</div>
+								
+								<div class="form-group label-floating" style="margin: 70px 0 0 0">
+								  <label for="inputEmail" class="control-label" style="margin: 6px 0 0 15px">e-Mail</label>
+
+								  <div class="col-md-12">
+									<input type="email" class="form-control" id="inputEmail" placeholder="">
+									<p class="help-block text-primary">Inserisci il tuo indirizzo email da validare. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p><!--INSERIRE IL CONTROLLO DELL'EMAIL PER ATTIVARE L'ISCRIZIONE-->
+								  </div>
+								</div>
+								
+								<!--<div class="form-group label-floating" style="margin: 70px 0 0 0">
+									<label for="inputEmail" class="control-label">e-Mail</label>
+									<input type="email" class="form-control" id="inputEmail" placeholder="">
+									<p class="help-block text-primary">Inserisci un'indirizzo email valido. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
+								</div>-->
+
+								<div class="form-group label-floating" style="margin: 70px 0 0 0">
+								  <label for="inputName" class="control-label" style="margin: 6px 0 0 15px">Nome</label>
+
+								  <div class="col-md-12">
+									<input type="text" class="form-control" id="inputName" placeholder="">
+									<p class="help-block text-primary">Inserisci il tuo nome, da riportare sull'attestato finale. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
+								  </div>
+								</div>
+								
+								<div class="form-group label-floating" style="margin: 70px 0 0 0">
+								  <label for="inputSurname" class="control-label" style="margin: 6px 0 0 15px">Cognome</label>
+
+								  <div class="col-md-12">
+									<input type="text" class="form-control" id="inputSurname" placeholder="">
+									<p class="help-block text-primary">Inserisci il tuo cognome, da riportare sull'attestato finale. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
+								  </div>
+								</div>
+								
+								<div class="form-group label-floating" style="margin: 70px 0 0 0">
+								  <!--<label for="inputBorn" class="control-label" style="margin: 6px 0 0 15px">Data di nascita. <sup class="text-danger" style="font-size: 14px; line-height: 14px">*</sup></label>-->
+
+								  <div class="col-md-12">
+									<input type="date" class="form-control" id="inputBorn" placeholder="Data di nascita">
+								<p class="help-block text-primary">Inserisci la tua data di nascita. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
+								  </div>
+								</div>
+
+								<div class="form-group" style="margin: 70px 0 0 0">
+								  <label class="col-md-2 control-label" style="margin: 0 0 0 0; font-size: 16px; line-height: 22px; text-align: left">Lingua parlata (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</label>
+
+								  <div class="col-md-10">
+									<div class="checkbox checkbox-primary">
+									  <label for="Checkbox_1" style="text-align: left">
+										<input type="checkbox" name="optionsCheckboxes" id="Checkbox_1" value="option1">
+										Italiano
+									  </label>
+									</div>
+									  
+									<div class="checkbox checkbox-primary">
+									  <label for="Checkbox_2" style="text-align: left">
+										<input type="checkbox" name="optionsCheckboxes" id="Checkbox_2" value="option2">
+										English
+									  </label>
+									</div>
+								  </div>
+								</div>
+								
+								<div class="form-group" style="margin: 70px 0 0 0">
+								  <label class="col-md-2 control-label" style="margin: 0 0 0 0; font-size: 16px; line-height: 22px; text-align: left">Sistema Operativo di preferenza (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</label>
+
+								  <div class="col-md-10">
+									<div class="radio radio-primary">
+									  <label for="Windows" style="text-align: left">
+										<input type="radio" name="optionsRadios" id="Windows" value="option1" checked="">
+										Windows
+									  </label>
+									</div>
+									  
+									<div class="radio radio-primary">
+										<label for="macOS" style="text-align: left">
+											<input type="radio" name="optionsRadios" id="macOS" value="option2">
+											macOS
+										</label>
+									</div>
+									  
+									<div class="radio radio-primary">
+										<label for="Linux" style="text-align: left">
+											<input type="radio" name="optionsRadios" id="Linux" value="option3">
+											Linux
+										</label>
+									</div>
+								  </div>
+								</div>
+								
+								<div class="form-group label-floating" style="margin: 70px 0 0 0">
+								  <label for="inputProArea" class="control-label" style="margin: 6px 0 0 15px">Area professionale</label>
+
+								  <div class="col-md-12">
+									<input type="text" class="form-control" id="inputProArea" placeholder="">
+									<p class="help-block text-primary">Inserisci la tua area professionale: servirà per creare contenuti più mirati per il tuo ambito. (es. <em>Settore sanitario</em>) (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
+								  </div>
+								</div>
+								
+								<div class="form-group label-floating" style="margin: 70px 0 0 0">
+								  <label for="inputProRole" class="control-label" style="margin: 6px 0 0 15px">Ruolo professionale</label>
+
+								  <div class="col-md-12">
+									<input type="text" class="form-control" id="inputProRole" placeholder="">
+									<p class="help-block text-primary">Inserisci il ruolo da te assunto nel tuo contesto professionale: aiuterà per creare contenuti su misura per te. (es. <em>Farmacista</em>) (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
+								  </div>
+								</div>
+								
+								<div class="form-group label-floating" style="margin: 70px 0 0 0">
+								  <label for="inputPhoneNum" class="control-label" style="margin: 6px 0 0 15px">Numero di telefono mobile</label>
+
+								  <div class="col-md-12">
+									<input type="tel" class="form-control" id="inputPhoneNum" placeholder="">
+									<p class="help-block text-primary">Inserisci un tuo recapito di cellulare, per partecipare al gruppo di WhatsApp del Corso. ( <em>Opzionale</em> )</p>
+								  </div>
+								</div>
+								
+								<div class="form-group label-floating" style="margin: 70px 0 0 0">
+								  <label for="inputWebsite" class="control-label" style="margin: 6px 0 0 15px">Sito web</label>
+
+								  <div class="col-md-12">
+									<input type="url" class="form-control" id="inputWebsite" placeholder="">
+									<p class="help-block text-primary">Puoi indicare qui il tuo sito web, se desiderato. ( <em>Opzionale</em> )</p>
+								  </div>
+								</div>								
+
+								<div class="form-group label-floating" style="margin: 70px 0 0 0">
+									<label for="textArea" class="control-label" style="margin: 10px 0 0 15px">Note aggiuntive</label>
+
+									<div class="col-md-12">
+										<textarea class="form-control" rows="2" id="textArea" style="margin: 0 0 5px 0; padding: 0; border: none"></textarea>
+										<p class="help-block text-primary">Qui puoi lasciare note aggiuntive, se desiderato: verrai contattato tramite l'email fornita. ( <em>Opzionale</em> )</p>
+									</div>
+								</div>
+								
+								<div class="form-group" style="margin: 70px 0 0 0">
+								  <label class="control-label" style="margin: 6px 0 0 15px"><em>Una copia delle risposte verrà inviata via email all'indirizzo fornito.</em></label>
+								</div>
+								
+								<div class="form-group" style="margin: 70px 0 0 0">
+									<div class="g-recaptcha" data-sitekey="6LfsdCoUAAAAAOzabrqwCOOLr8HQwdBz7uPiI1m9" style="margin: 6px 0 0 15px"></div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-md-10 col-md-offset-2">
+										<button type="button" class="btn btn-default">Cancel</button>
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			
+		
+				<!-- Buttons
+			================================================== -->
+				<div class="row">
+					<div class="col-md-12">
+
+						<p class="bs-component">
+							<a id="fab" href="javascript:void(0)" class="btn btn-default btn-fab"><i class="material-icons">grade</i></a>
+						</p>
+
+						<!--<p class="bs-component btn-group-sm">
+				  <a href="javascript:void(0)" class="btn btn-default btn-fab"><i class="material-icons">grade</i></a>
+				</p>-->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<!-- ### JS core ### -->
+
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="http://fezvrasta.github.io/bootstrap-material-design/dist/js/ripples.min.js"></script>
+	<script src="http://fezvrasta.github.io/bootstrap-material-design/dist/js/material.min.js"></script>
+	<script src="http://fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+	
+	<script>
+		$(function() {
+			$.material.init();
+		});
+
+	</script>
+	
+	<!-- Mine JS -->
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
