@@ -1,0 +1,3 @@
+/*
+	eCard JavaScript Code
+*/
