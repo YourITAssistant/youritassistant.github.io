@@ -25,6 +25,10 @@ body .container .well, body .container-fluid .well, body .container .jumbotron, 
 	color: #33454c
 }
 
+.help-block {
+	font-weight: bold;
+}
+
 #banner {
 	border-bottom: none
 }
