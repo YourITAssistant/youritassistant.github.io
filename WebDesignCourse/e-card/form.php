@@ -3,4 +3,3 @@ $content = file_get_contents('https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQ
 $content = str_replace('</title>','</title><base href="https://docs.google.com/forms/" />', $content);
 $content = str_replace('</head>','<link rel="stylesheet" href="https://youritassistant.github.io/css/form.css" /></head>', $content);
 echo $content;
-?>
