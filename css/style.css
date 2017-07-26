@@ -29,7 +29,7 @@ body .container .well, body .container-fluid .well, body .container .jumbotron, 
 	font-weight: bold !important;
 }
 
-#complete-dialog {
+#complete_dialog {
 	position: relative;
 	float: left;
 	top: 50%;
