@@ -73,7 +73,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="well bs-component">
-						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" method="POST" id="ss-form" target="_self" class="form-horizontal">
+						<form action="https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse" target="_self" method="POST" id="mG61Hd" class="form-horizontal">
 							<fieldset>
 								<div class="form-group" style="margin: 70px 0 0 0">
 								  <label class="col-md-2 control-label" style="margin: 0 0 0 0; font-size: 16px; line-height: 22px; text-align: left">Sessione Corso desiderata (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</label>
@@ -141,7 +141,7 @@
 								  <!--<label for="entry_362604716" class="control-label" style="margin: 6px 0 0 15px">Data di nascita. <sup class="text-danger" style="font-size: 14px; line-height: 14px">*</sup></label>-->
 
 								  <div class="col-md-12">
-									  <input type="date" name="entry.362604716" class="form-control" id="entry_362604716" placeholder="Data di nascita" />
+									  <input type="date" name="entry.362604716" class="form-control" id="entry_362604716" placeholder="Data di nascita" value="2017-27-07" />
 									  
 									  <p class="help-block text-primary">Inserisci la tua data di nascita. (<span class="text-danger" style="font-size: 13px; line-height: 13px; font-weight: bold; vertical-align: -2px">*</span>)</p>
 								  </div>
@@ -375,9 +375,9 @@
 		jQuery(document).ready(function($){
 			$.material.init();
 
-			$('#ss-form').submit(function(event) {
+			$('#mG61Hd').submit(function(event) {
 			     event.preventDefault();
-			     dataString = $("#ss-form").serialize();
+			     dataString = $("#mG61Hd").serialize();
 			     $.ajax({
 			        type: "post",
 			        url: "https://docs.google.com/forms/d/e/1FAIpQLSd1lbrSgQkUbT3YU45EoaEhtUokendP9wuqlSpy6IU-k9g5KQ/formResponse",
@@ -386,7 +386,7 @@
 			        success: function (response) {
 			            if(response.status === "success") {
 			                // do something with response.message or whatever other data on success
-			            //    $('$ss-form').addClass('submited');
+			            //    $('$mG61Hd').addClass('submited');
 							$('#complete_dialog').modal('show');
 							window.setInterval(redirect, 250); // 100
 			            } else if(response.status === "error") {
@@ -409,12 +409,12 @@
 				//post ajax
 				,success: function(data){ 
 					//do other stuff
-					$('$ss-form').addClass('submited');
+					$('$mG61Hd').addClass('submited');
 				}
 			});
 
 			window.onbeforeunload = function(e) {
-				if ($('#ss-form').hasClass('submited') {
+				if ($('#mG61Hd').hasClass('submited') {
 					//do submitted stuff
 					$('#complete_dialog').modal('show');
 					window.setInterval(redirect, 250); // 100
@@ -434,7 +434,7 @@
 			});
 
 			function redirect(){
-				if(($("#ss-form").is(':visible')) && (eventposted==0)){
+				if(($("#mG61Hd").is(':visible')) && (eventposted==0)){
 					window.location = "https://youritassistant.github.io";
 					eventposted=1;
 				}
