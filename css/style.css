@@ -12,6 +12,11 @@
 	margin: 0 120px 0 0;
 }
 */
+:before, ::before {
+	display: table;
+    content: " ";
+}
+
 body {
 	padding-top: 50px;
 }
@@ -27,14 +32,6 @@ body .container .well, body .container-fluid .well, body .container .jumbotron, 
 
 .form-group .help-block {
 	font-weight: bold !important;
-}
-
-#complete_dialog {
-	position: relative;
-	float: left;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 }
 
 #banner {
